@@ -1,10 +1,3 @@
-import Cookies from 'cookies';
-import Mysql from 'mysql';
-import Link from 'next/link';
-import SQL from 'sql-template-strings';
-import Layout from '../components/Layout';
-
-
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
