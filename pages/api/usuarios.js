@@ -17,7 +17,7 @@ con.connect(async function(err) {
   });
 
   export default function getTarefas(request, response){
-    con.query("SELECT * FROM TAREFA", function (err, result, fields) {
+    con.query("SELECT ID, NOME, LOGIN, NIVEL, TIME, FUNCAO, XP FROM USUARIO", function (err, result, fields) {
       if (err) return err;
       const listaTarefas = [];
       return response.json({

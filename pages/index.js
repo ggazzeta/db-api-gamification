@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -20,15 +21,19 @@ export default function Home() {
           Analista de Desenvolvimento Jr.
         </p>
 
+        <Link href="/tecnologias" className={styles.description}>
+          Minhas Tecnologias preferidas.
+        </Link>
+
         <div className={styles.grid}>
           <a href="https://github.com/ggazzeta" className={styles.card}>
             <h2>Projetos &rarr;</h2>
             <p>Encontre aqui os meus projetos no GitHub.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://www.ggazzeta.com/api/tarefas" className={styles.card}>
+            <h2>API &rarr;</h2>
+            <p>Segue a rota para as minhas APIs 😜</p>
           </a>
 
           <a
