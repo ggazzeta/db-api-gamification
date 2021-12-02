@@ -6,23 +6,22 @@ var con = mysql.createConnection({
     host: "sql10.freesqldatabase.com",
     database: "sql10453712",
     user: "sql10453712",
-    password: "hcjMA2wTW6"
+    password: "hcjMA2wTW6",
+    port: 3306
   });
 
-var tarefasResultado = [];
-
-con.connect(function(err) {
-    if (err) throw err;
-    con.query("SELECT NOME, DESCRICAO, FINALIZADA, (SELECT NOME FROM USUARIO U WHERE U.ID = T.USUARIO) NOMEUSUARIO, (SELECT NOME FROM TIMES TI WHERE TI.ID = T.TIME) NOMETIME FROM TAREFA T", function (err, result, fields) {
-      if (err) throw err;
-      tarefasResultado = result;
-    });
+con.connect(async function(err) {
+    if (err) return err; 
   });
 
- export default function tarefas(request, response){
+  export default function getTarefas(request, response){
+    con.query("SELECT * FROM TAREFA", function (err, result, fields) {
+      if (err) return err;
       const listaTarefas = [];
-
-      response.json({
-          listaTarefas: tarefasResultado
-    })
+      return response.json({
+        listaTarefas: result
+  })
+    });
   }
+
+  
