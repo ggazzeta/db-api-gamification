@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Web-Curriculum Gustavo Gazzeta</title>
+        <title>Web-Curriculum <strong>Gustavo Gazzeta</strong></title>
         <meta name="description" content="Todos os meus trabalhos contidos aqui." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
